@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CIVIL MOVEMENT 2020 MAP 🗺️
 
-## Getting Started
+Developed with `Next.js` + `Mapbox GL JS` + `Tailwind CSS`
 
-First, run the development server:
+## Background 🤔
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This is a fun little `Data Visualization` project where I attempted to answer:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Where** had Thais been protesting in 2020? 🗺️
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- **Which** groups had been quite active? 🧑‍🦰
+  - Young Adults🧑‍🎤/ Adults 🦸/ Political Parties 🧑‍💼?
+  - Major Protest Groups 🐥/ Groups related to certain event 🌴?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## My Work Process
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- 💥Get the [Dataset](https://docs.google.com/spreadsheets/d/1bzp2_7CoqzQS1R6qP0-02Ped83cutEHHlp05eVjhU88/edit#gid=2069977106). All credits to [ELECT.in.th](https://elect.in.th/) team and their contributors 🙏 (P.S. Check out their original data visualization work "[CIVIL MOVEMENT 2020](https://elect.in.th/civil-movement-2020/)" it's truly outstanding!)
+- ⚡️Data Manipulation
+  - Perform data cleansing on the location name, and other columns necessary.
+  - Retrieve and append the Geocoding information via [Mapbox Geocoding API](https://docs.mapbox.com/api/search/geocoding/).
+  - Reformat the data into a structured JSON format.
+- 🌎Do a Scatter Plot on a Map using with [Mapbox GL JS](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/).
 
-## Learn More
+## Note
 
-To learn more about Next.js, take a look at the following resources:
+I am aware that my take on this project is very far from perfect. Several geographic coordinates retrieved were incorrect, and some were never even returned 💀. However, I would regret if I hadn't share this imperfectly beautiful image with my fellow protestors. `Let's keep fighting for our future! 🚀`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> [Read this Project's Articles](https://palminister-blog.vercel.app/?search=civil)
