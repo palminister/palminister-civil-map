@@ -27,4 +27,4 @@ I am aware that my take on this project is very far from perfect. Several geogra
 
 > [Read this Project's Articles](https://palminister-blog.vercel.app/?search=civil)
 
-> 🚀 [civil-map](https://palminister-civil-map.vercel.app/)
+🚀 [civil-map](https://palminister-civil-map.vercel.app/)
