@@ -58,8 +58,8 @@ export default function Home() {
     }
   }
   const byClass = bySelect
-    ? 'absolute z-50 float-right p-2 px-3 m-5 bg-green-100 bg-opacity-80 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
-    : 'absolute z-50 float-right p-2 px-3 m-5 bg-white bg-opacity-80 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
+    ? 'absolute z-50 float-right w-12 h-12 m-5 bg-green-100 bg-opacity-80 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
+    : 'absolute z-50 float-right w-12 h-12 m-5 bg-white bg-opacity-80 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
   return (
     <>
       <Head>

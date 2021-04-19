@@ -2,8 +2,8 @@ import { useState } from 'react'
 const Explain = () => {
   const [seemore, setSeemore] = useState(false)
   const seemoreClass = seemore
-    ? 'absolute right-0 z-50 float-right p-2 px-3 m-5 bg-indigo-100 bg-opacity-80 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
-    : 'absolute right-0 z-50 float-right p-2 px-3 m-5 bg-indigo-50 bg-opacity-80 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
+    ? 'absolute right-0 z-50 float-right w-12 h-12 m-5 bg-indigo-100 bg-opacity-80 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
+    : 'absolute right-0 z-50 float-right w-12 h-12 m-5 bg-indigo-50 bg-opacity-80 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
   return (
     <>
       <button
@@ -22,9 +22,9 @@ const Explain = () => {
             <br />
             <div className="pb-6">
               <p className="font-bold">
-                <span className="p-2 px-3 mr-3 text-xl bg-green-100 border border-green-200 rounded-full">
-                  🧑‍🦰
-                </span>
+                <button className="w-12 h-12 mr-3 bg-green-100 border border-green-200 rounded-full cursor-default focus:outline-none">
+                  <span className="text-xl ">🧑‍🦰</span>
+                </button>
                 ดูผู้สร้างเหตุการณ์
               </p>
               <div className="pt-4 pl-4">
