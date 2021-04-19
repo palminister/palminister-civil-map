@@ -77,7 +77,7 @@ const Explain = () => {
                 </a>
               </p>
               <a
-                href="https://github.com/palminister"
+                href="https://github.com/palminister/palminister-civil-map"
                 className="text-gray-400 hover:text-gray-500"
                 target="_blank"
                 rel="noreferrer"
