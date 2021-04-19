@@ -25,6 +25,6 @@ This is a fun little `Data Visualization` project where I attempted to answer:
 
 I am aware that my take on this project is very far from perfect. Several geographic coordinates retrieved were incorrect, and some were never even returned 💀. However, I would regret if I hadn't share this imperfectly beautiful image with my fellow protestors. `Let's keep fighting for our future! 🚀`
 
-> [Read this Project's Articles](https://palminister-blog.vercel.app/?search=civil)
+> [Read This Project's Articles](https://palminister-blog.vercel.app/?search=civil)
 
 🚀 [civil-map](https://palminister-civil-map.vercel.app/)
