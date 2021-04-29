@@ -1,65 +1,37 @@
 import Head from 'next/head'
 import React, { useState } from 'react'
-import ReactMapGL, { Marker } from 'react-map-gl'
-import * as civilData from './data/civil_data.json'
+// import ReactMapGL, { Marker } from 'react-map-gl'
+// import * as civilData from './data/civil_data.json'
 import Modal from './components/Modal'
 import Explain from './components/Explain'
+import Mapbox from './components/Mapbox'
+import { FlyToInterpolator } from 'react-map-gl'
+import { easeCubic } from 'd3-ease'
+import Calendar from './components/Calendar'
+import Arrow from './components/Arrow'
+import Region from './components/Region'
+import Brief from './components/Brief'
 
 export default function Home() {
+  const [emojiSelect, setEmojiSelect] = useState(null)
+  const [byWhoSelect, setbyWhoSelect] = useState(false)
+  const [selectedMonth, setSelectedMonth] = useState([])
+  const [currentPage, setCurrentPage] = useState(0)
+  const [selectedRegion, setSelectedRegion] = useState([])
   const [viewport, setViewport] = useState({
     latitude: 13.4,
     longitude: 101.5,
-    zoom: 5,
-    width: '100vw',
+    minZoom: 5,
+    width: '50vw',
     height: '100vh',
+    transitionDuration: 1000,
+    transitionInterpolator: new FlyToInterpolator(),
+    transitionEasing: easeCubic,
   })
-  const [select, setSelect] = useState(null)
-  const [bySelect, setBySelect] = useState(false)
-  const returnType = (event) => {
-    switch (event.type) {
-      case 'a':
-        return <span>🍊</span>
-      case 'b':
-        return <span>🦋</span>
-      case 'c':
-        return <span>🌟</span>
-      case 'd':
-        return <span>🐥</span>
-      case 'e':
-        return <span>💪</span>
-      case 'f':
-        return <span>🔥</span>
-      case 'g':
-        return <span>🩸</span>
-      case 'h':
-        return <span>✏️</span>
-      case 'i':
-        return <span>🌴</span>
-      case 'j':
-        return <span>✍️</span>
-      case 'k':
-        return <span>👩</span>
-      case 'l':
-        return <span>🌎</span>
-      default:
-        return <span>🚀</span>
-    }
-  }
-  const byType = (event) => {
-    switch (event.by) {
-      case 1:
-        return '🧑‍🎤'
-      case 2:
-        return '🦸'
-      case 3:
-        return '🧑‍💼'
-      default:
-        return ''
-    }
-  }
-  const byClass = bySelect
-    ? 'absolute z-50 float-right w-12 h-12 m-5 bg-green-100 bg-opacity-80 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
-    : 'absolute z-50 float-right w-12 h-12 m-5 bg-white bg-opacity-80 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
+
+  const byClass = byWhoSelect
+    ? 'absolute z-50 float-right w-12 h-12 m-5 bg-green-300 bg-opacity-70 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
+    : 'absolute z-50 float-right w-12 h-12 m-5 bg-white bg-opacity-10 border border-green-200 rounded-full right-14 sm:right-16 hover:border-green-400 focus:outline-none hover:cursor-pointer'
   return (
     <>
       <Head>
@@ -80,38 +52,72 @@ export default function Home() {
       <button
         onClick={(e) => {
           e.preventDefault()
-          setBySelect(!bySelect)
+          setbyWhoSelect(!byWhoSelect)
         }}
         className={byClass}
       >
         <span className="text-xl">🧑‍🦰</span>
       </button>
       <Explain></Explain>
-      <ReactMapGL
-        {...viewport}
-        mapboxApiAccessToken="pk.eyJ1IjoicGFsbWluaXN0ZXIiLCJhIjoiY2ttdzNiZnlxMDlpMTJvbXRlNWdxd3ZnaSJ9.Y5VScupvzmQFd5T7aeQYtw"
-        mapStyle="mapbox://styles/palminister/cknh0ow9a0c5d17o3c2hezyjs"
-        onViewportChange={(viewport) => setViewport(viewport)}
-      >
-        {civilData.events.map((event) => (
-          <Marker
-            key={event.id}
-            latitude={event.coordinates.lat}
-            longitude={event.coordinates.lng}
-          >
-            <button
-              className="text-2xl transition duration-200 transform cursor-pointer focus:outline-none hover:scale-150"
-              onClick={(e) => {
-                e.preventDefault()
-                setSelect(event)
-              }}
-            >
-              {bySelect ? byType(event) : returnType(event)}
-            </button>
-          </Marker>
-        ))}
-      </ReactMapGL>
-      <Modal select={select} setSelect={setSelect}></Modal>
+      <div className="absolute w-1/2 h-full overflow-hidden bg-gray-50">
+        {/* bg-green-300 */}
+        <div className="flex w-full h-full">
+          <div className="relative w-11/12 m-auto overflow-y-auto align-middle bg-white rounded-lg shadow-xl h-4/6">
+            <div className={currentPage === 0 ? 'visible' : 'hidden'}>
+              <Calendar
+                selectedMonth={selectedMonth}
+                setSelectedMonth={setSelectedMonth}
+              ></Calendar>
+            </div>
+            <div className={currentPage === 1 ? 'visible' : 'hidden'}>
+              <Region
+                selectedRegion={selectedRegion}
+                setSelectedRegion={setSelectedRegion}
+              ></Region>
+            </div>
+            <div className={currentPage === 2 ? 'visible' : 'hidden'}>
+              <Brief
+                setViewport={setViewport}
+                selectedMonth={selectedMonth}
+                selectedRegion={selectedRegion}
+                setEmojiSelect={setEmojiSelect}
+              ></Brief>
+            </div>
+
+            {/* {currentPage === 0 ? (
+              <Calendar
+                selectedMonth={selectedMonth}
+                setSelectedMonth={setSelectedMonth}
+              ></Calendar>
+            ) : currentPage === 1 ? (
+              <Region></Region>
+            ) : null} */}
+
+            {/* <Arrow
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            ></Arrow> */}
+            <Arrow
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              selectedMonth={selectedMonth}
+              setViewport={setViewport}
+            ></Arrow>
+          </div>
+        </div>
+      </div>
+      <div className="absolute right-0 bg-gradient-to-br from-gray-800 to-gray-900">
+        {/* bg-red-400 */}
+        <Mapbox
+          viewport={viewport}
+          setViewport={setViewport}
+          byWhoSelect={byWhoSelect}
+          setEmojiSelect={setEmojiSelect}
+          selectedMonth={selectedMonth}
+          selectedRegion={selectedRegion}
+        ></Mapbox>
+      </div>
+      <Modal emojiSelect={emojiSelect} setEmojiSelect={setEmojiSelect}></Modal>
     </>
   )
 }

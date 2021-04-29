@@ -2,8 +2,8 @@ import { useState } from 'react'
 const Explain = () => {
   const [seemore, setSeemore] = useState(false)
   const seemoreClass = seemore
-    ? 'absolute right-0 z-50 float-right w-12 h-12 m-5 bg-indigo-100 bg-opacity-80 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
-    : 'absolute right-0 z-50 float-right w-12 h-12 m-5 bg-indigo-50 bg-opacity-80 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
+    ? 'absolute right-0 z-50 float-right w-12 h-12 m-5 bg-indigo-300 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
+    : 'absolute right-0 z-50 float-right w-12 h-12 m-5 bg-indigo-500 bg-opacity-20 border rounded-full border-indigo-200 hover:border-indigo-300 hover:text-indigo-900 focus:outline-none hover:cursor-pointer'
   return (
     <>
       <button
@@ -16,13 +16,13 @@ const Explain = () => {
         <span className="text-xl">🤔</span>
       </button>
       {seemore ? (
-        <div className="absolute right-0 z-10 w-auto h-auto p-10 overflow-y-auto bg-white shadow-lg font-noto">
+        <div className="absolute right-0 z-10 w-1/2 h-auto p-10 overflow-y-auto bg-white shadow-lg font-noto">
           <h1 className="text-4xl font-bold">คำอธิบายสัญลักษณ์</h1>
           <div>
             <br />
             <div className="pb-6">
               <p className="font-bold">
-                <button className="w-12 h-12 mr-3 bg-green-100 border border-green-200 rounded-full cursor-default focus:outline-none">
+                <button className="w-12 h-12 mr-3 bg-green-300 border border-green-200 rounded-full cursor-default bg-opacity-70 focus:outline-none">
                   <span className="text-xl ">🧑‍🦰</span>
                 </button>
                 ดูผู้สร้างเหตุการณ์
