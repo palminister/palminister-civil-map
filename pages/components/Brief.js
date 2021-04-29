@@ -12,12 +12,18 @@ const Brief = ({
   const emoji = returnType
   const filteredData = civilData.events
     .filter((event) => {
-      if (selectedMonth.includes(parseInt(event.date.split('-')[1])))
-        return event
+      if (selectedMonth != undefined) {
+        if (selectedMonth.includes(parseInt(event.date.split('-')[1])))
+          return event
+      }
     })
     .filter((event) => {
-      if (selectedRegion.length != 0) {
-        if (selectedRegion.includes(event.region)) {
+      if (selectedRegion != undefined) {
+        if (selectedRegion.length != 0) {
+          if (selectedRegion.includes(event.region)) {
+            return event
+          }
+        } else {
           return event
         }
       } else {

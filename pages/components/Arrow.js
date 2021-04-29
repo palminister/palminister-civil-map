@@ -40,7 +40,12 @@ const Arrow = ({ currentPage, setCurrentPage, selectedMonth, setViewport }) => {
     'flex transition ease-in bg-white border rounded-sm focus:outline-none w-9 h-9 hover:bg-gray-50'
   const greenButton =
     'flex transition ease-in bg-green-200 border rounded-sm focus:outline-none w-9 h-9 hover:bg-green-50'
-  const buttonChange = selectedMonth.length == 0 ? normalButton : greenButton
+  const buttonChange =
+    selectedMonth != undefined
+      ? selectedMonth.length == 0
+        ? normalButton
+        : greenButton
+      : null
   return (
     <div className="sticky bottom-0 right-0 float-right p-5 w-28">
       <div className="flex">
