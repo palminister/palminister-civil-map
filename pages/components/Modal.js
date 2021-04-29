@@ -14,11 +14,8 @@ const Modal = ({ emojiSelect, setEmojiSelect }) => {
   return (
     <>
       {emojiSelect ? (
-        <div className="w-screen h-screen p-48 font-noto">
-          <div
-            style={{ backdropFilter: 'blur(15px)' }}
-            className="w-full h-full p-5 overflow-y-auto bg-white shadow-2xl bg-opacity-80 bg-clip-padding rounded-xl"
-          >
+        <div className="absolute z-50 w-screen h-screen p-48 font-noto">
+          <div className="w-full h-full p-5 overflow-y-auto bg-white shadow-2xl bg-clip-padding rounded-xl">
             <button
               onClick={(e) => {
                 e.preventDefault()

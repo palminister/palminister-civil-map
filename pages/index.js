@@ -59,6 +59,7 @@ export default function Home() {
         <span className="text-xl">🧑‍🦰</span>
       </button>
       <Explain></Explain>
+      <Modal emojiSelect={emojiSelect} setEmojiSelect={setEmojiSelect}></Modal>
       <div className="absolute w-1/2 h-full overflow-hidden bg-gray-50">
         {/* bg-green-300 */}
         <div className="flex w-full h-full">
@@ -117,7 +118,6 @@ export default function Home() {
           selectedRegion={selectedRegion}
         ></Mapbox>
       </div>
-      <Modal emojiSelect={emojiSelect} setEmojiSelect={setEmojiSelect}></Modal>
     </>
   )
 }
