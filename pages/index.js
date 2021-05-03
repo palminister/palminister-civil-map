@@ -1,16 +1,14 @@
 import Head from 'next/head'
 import React, { useState } from 'react'
-// import ReactMapGL, { Marker } from 'react-map-gl'
-// import * as civilData from './data/civil_data.json'
 import Modal from './components/Modal'
 import Explain from './components/Explain'
-import Mapbox from './components/Mapbox'
-import { FlyToInterpolator } from 'react-map-gl'
-import { easeCubic } from 'd3-ease'
 import Calendar from './components/Calendar'
 import Arrow from './components/Arrow'
 import Region from './components/Region'
 import Brief from './components/Brief'
+import Mapbox from './components/Mapbox'
+import { FlyToInterpolator } from 'react-map-gl'
+import { easeCubic } from 'd3-ease'
 
 export default function Home() {
   const [emojiSelect, setEmojiSelect] = useState(null)
@@ -84,20 +82,6 @@ export default function Home() {
                 setEmojiSelect={setEmojiSelect}
               ></Brief>
             </div>
-
-            {/* {currentPage === 0 ? (
-              <Calendar
-                selectedMonth={selectedMonth}
-                setSelectedMonth={setSelectedMonth}
-              ></Calendar>
-            ) : currentPage === 1 ? (
-              <Region></Region>
-            ) : null} */}
-
-            {/* <Arrow
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            ></Arrow> */}
             <Arrow
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
