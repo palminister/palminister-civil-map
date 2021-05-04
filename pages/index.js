@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import React, { useState } from 'react'
 import Modal from './components/Modal'
 import Explain from './components/Explain'
 import Calendar from './components/Calendar'
@@ -9,8 +8,9 @@ import Brief from './components/Brief'
 import Mapbox from './components/Mapbox'
 import { FlyToInterpolator } from 'react-map-gl'
 import { easeCubic } from 'd3-ease'
+import React, { useState } from 'react'
 
-export default function Home() {
+export const Home = () => {
   const [emojiSelect, setEmojiSelect] = useState(null)
   const [byWhoSelect, setbyWhoSelect] = useState(false)
   const [selectedMonth, setSelectedMonth] = useState([])
@@ -105,3 +105,4 @@ export default function Home() {
     </>
   )
 }
+export default Home

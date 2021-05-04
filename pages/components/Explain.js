@@ -73,7 +73,7 @@ const Explain = () => {
                   target="_blank"
                   className="font-bold underline"
                 >
-                  READ THE MAKING-OF
+                  READ RELATED ARTICLES
                 </a>
               </p>
               <a
