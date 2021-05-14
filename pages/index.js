@@ -39,7 +39,7 @@ export const Home = () => {
           content="https://palminister-civil-map.vercel.app/"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="CIVIL MOVEMENT 2020 MAP" />
+        <meta property="og:title" content="Civil Movement 2020 Map" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:description"

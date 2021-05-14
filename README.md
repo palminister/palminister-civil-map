@@ -1,4 +1,4 @@
-# Civil Map 2020 🗺️
+# Civil Movement Map 2020 🗺️
 
 Developed with `Next.js` + `Mapbox GL JS` + `Tailwind CSS` + `D3.js`
 
