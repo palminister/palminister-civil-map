@@ -34,6 +34,21 @@ export const Home = () => {
     <>
       <Head>
         <title>CIVIL MOVEMENT MAP</title>
+        <meta
+          property="og:url"
+          content="https://palminister-civil-map.vercel.app/"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="CIVIL MOVEMENT 2020 MAP" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:description"
+          content="A map visualization of the civil movement in 2020 (TH)"
+        />
+        <meta
+          property="og:image"
+          content="https://palminister-portfolio.vercel.app/_next/image?url=%2Fmysite-thumbnail%2Fcivil-map-thumb.png&w=3840&q=75"
+        />
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗺️</text></svg>"
