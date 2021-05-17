@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         noto: ['Noto Sans Thai'],
+        nimbus: ['Nimbus Roman No9 L'],
       },
     },
   },

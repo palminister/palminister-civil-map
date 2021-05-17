@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Emoji from 'react-apple-emojis'
+import * as symbols from '../data/group_symbols.json'
 const Explain = () => {
   const [seemore, setSeemore] = useState(false)
   const seemoreClass = seemore
@@ -13,44 +15,83 @@ const Explain = () => {
         }}
         className={seemoreClass}
       >
-        <span className="text-xl">🤔</span>
+        <div className="flex justify-center">
+          <Emoji name="thinking-face" width={20} className="self-center" />
+        </div>
       </button>
       {seemore ? (
-        <div className="absolute right-0 z-10 w-1/2 h-auto p-10 overflow-y-auto bg-white shadow-lg font-noto">
+        <div className="absolute right-0 z-10 w-1/2 h-screen p-10 overflow-y-auto bg-white shadow-lg font-noto">
           <h1 className="text-4xl font-bold">คำอธิบายสัญลักษณ์</h1>
           <div>
             <br />
             <div className="pb-6">
               <p className="font-bold">
                 <button className="w-12 h-12 mr-3 bg-green-300 border border-green-200 rounded-full cursor-default bg-opacity-70 focus:outline-none">
-                  <span className="text-xl ">🧑‍🦰</span>
+                  <div className="flex justify-center">
+                    <Emoji
+                      name="person-red-hair"
+                      width={20}
+                      className="self-center"
+                    />
+                  </div>
                 </button>
                 ดูผู้สร้างเหตุการณ์
               </p>
               <div className="pt-4 pl-4">
-                <p>🧑‍🎤 เยาวชน อายุ 15-24 ปี</p>
-                <p>🦸 ประชาชน</p>
-                <p>🧑‍💼 พรรคการเมือง</p>
+                <div className="flex">
+                  <Emoji
+                    name="singer"
+                    width={16}
+                    className="self-start mt-1 mr-1"
+                  />{' '}
+                  <p>เยาวชน อายุ 15-24 ปี</p>
+                </div>
+                <div className="flex">
+                  <Emoji
+                    name="superhero"
+                    width={16}
+                    className="self-start mt-1 mr-1"
+                  />{' '}
+                  <p>ประชาชน</p>
+                </div>
+                <div className="flex">
+                  <Emoji
+                    name="office-worker"
+                    width={16}
+                    className="self-start mt-1 mr-1"
+                  />{' '}
+                  <p>พรรคการเมือง</p>
+                </div>
               </div>
             </div>
-            <p>🐥 การชุมนุมของกลุ่ม "คณะราษฎร 2563"</p>
-            <p>🦋 การชุมนุมของกลุ่ม “ปลดแอก”</p>
-            <p>🍊 เหตุยุบพรรคอนาคตใหม่</p>
-            <p>🌟 การชุมนุมของกลุ่ม “ธรรมศาสตร์และการชุมนุม”</p>
-            <p>💪 เรียกร้องความเป็นธรรมให้กับนายวันเฉลิม สัตย์ศักดิ์สิทธิ์</p>
-            <p>🔥 รำลึกวันครบรอบ 88 ปี วันเปลี่ยนแปลงการปกครองของประเทศไทย</p>
-            <p>
-              🩸
-              รำลึกเหตุการณ์สลายการชุมนุมและความรุนแรงที่เกิดขึ้นกับกลุ่มคนเสื้อแดง
+            <p className="font-bold">
+              <button className="w-12 h-12 mr-3 bg-white border border-green-200 rounded-full cursor-default bg-opacity-70 focus:outline-none">
+                <div className="flex justify-center">
+                  <Emoji
+                    name="person-red-hair"
+                    width={20}
+                    className="self-center"
+                  />
+                </div>
+              </button>
+              ดูกลุ่มการชุมนุม
             </p>
-            <p>✏️ เรียกร้องสวัสดิการต่าง ๆ จากรัฐ</p>
-            <p>🌴 เรียกร้องในประเด็นเกี่ยวกับสิ่งแวดล้อม</p>
-            <p>✍️ ร่างรัฐธรรมนูญฉบับ iLaw</p>
-            <p>👩 เรียกร้องสิทธิและความเป็นธรรมของผู้หญิง</p>
-            <p>🌎 สนับสนุน Movement ของชาวต่างชาติ</p>
+            <div className="pt-4 pl-4">
+              {symbols.data.map((symbol) => (
+                <div className="flex">
+                  <Emoji
+                    name={symbol.symbol}
+                    width={16}
+                    className="self-start mt-1 mr-1"
+                  />{' '}
+                  <p>{symbol.name}</p>
+                </div>
+              ))}
+            </div>
+
             <br />
             <p className="float-right text-sm ">
-              *กดที่ไอคอนเพื่ออ่านเพิ่มเติมนะฮะ
+              *กดที่ไอคอนเพื่ออ่านเพิ่มเติมนะครับ
             </p>
             <br />
             <p className="float-right text-sm ">
@@ -62,7 +103,7 @@ const Explain = () => {
               >
                 ELECT.IN.TH
               </a>
-              🔥]
+              ]
             </p>
             <br />
             <div className="flex justify-between mt-3">

@@ -41,17 +41,42 @@ const Brief = ({
       <div className="flex w-full h-full">
         <div className="p-10 text-4xl">
           {/* <button onClick={() => console.log(filteredData)}>Click</button> */}
-          <h1>
-            <span className="text-7xl ">{filteredData.length}</span> การประท้วง
-            🔥
-          </h1>
-          <h1>
-            <span className="text-5xl ">{byYoungAdults.length}</span>{' '}
-            นำโดยเยาวชน 🧑‍🎤
-          </h1>
-          <h1>
-            <span className="text-5xl ">{byAdults.length}</span> นำโดยประชาชน 🦸
-          </h1>
+          <div className="flex">
+            <p className="pr-2 text-7xl font-nimbus">
+              {filteredData.length}
+              <span className="text-4xl font-noto"> การประท้วง</span>
+            </p>
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/fire_1f525.png"
+              alt="fire"
+              width={40}
+              className="self-center -mt-3"
+            />
+          </div>
+          <div className="flex">
+            <p className="pr-2 text-5xl font-nimbus">
+              {byYoungAdults.length}
+              <span className="text-4xl font-noto"> นำโดยเยาวชน</span>
+            </p>
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/singer_1f9d1-200d-1f3a4.png"
+              alt="fire"
+              width={40}
+              className="self-center -mt-3"
+            />
+          </div>
+          <div className="flex">
+            <p className="pr-2 text-5xl font-nimbus">
+              {byAdults.length}
+              <span className="text-4xl font-noto"> นำโดยประชาชน</span>
+            </p>
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/superhero_1f9b8.png"
+              alt="fire"
+              width={40}
+              className="self-center -mt-3"
+            />
+          </div>
         </div>
       </div>
       <div className="m-auto font-normal">
@@ -75,8 +100,11 @@ const Brief = ({
             }}
             className="w-full px-10 mb-2 font-bold text-left transition ease-in hover:text-gray-500 focus:outline-none"
           >
-            <span className="pr-2 text-xl">{emoji(event)}</span>
-            {event.name}
+            <div className="flex">
+              {emoji(event)}
+              <span className="w-1"></span>
+              {event.name}
+            </div>
           </button>
         ))}
         {/* </div> */}

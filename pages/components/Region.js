@@ -67,7 +67,15 @@ const Region = ({ selectedRegion, setSelectedRegion }) => {
   }, [])
   return (
     <div className="font-bold bg-white font-noto">
-      <h1 className="p-10 text-4xl">เลือกภูมิภาค 🗺️</h1>
+      <div className="flex p-10">
+        <h1 className="pr-3 text-4xl">เลือกภูมิภาค</h1>
+        <img
+          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/world-map_1f5fa-fe0f.png"
+          alt="world-map"
+          width={40}
+          className="self-center"
+        />
+      </div>
       <div className="flex w-full h-full">
         <div className="m-auto font-bold">
           <div id="bubble"></div>

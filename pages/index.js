@@ -9,6 +9,7 @@ import Mapbox from './components/Mapbox'
 import { FlyToInterpolator } from 'react-map-gl'
 import { easeCubic } from 'd3-ease'
 import React, { useState } from 'react'
+import Emoji from 'react-apple-emojis'
 
 export const Home = () => {
   const [emojiSelect, setEmojiSelect] = useState(null)
@@ -33,7 +34,7 @@ export const Home = () => {
   return (
     <>
       <Head>
-        <title>CIVIL MOVEMENT MAP</title>
+        <title>Civil Movement Map</title>
         <meta
           property="og:url"
           content="https://palminister-civil-map.vercel.app/"
@@ -49,14 +50,18 @@ export const Home = () => {
           property="og:image"
           content="https://palminister-portfolio.vercel.app/_next/image?url=%2Fmysite-thumbnail%2Fcivil-map-thumb.png&w=3840&q=75"
         />
-        <link
+        {/* <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗺️</text></svg>"
-        ></link>
+        ></link> */}
+        <link
+          rel="icon"
+          href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/world-map_1f5fa-fe0f.png"
+        />
         <link rel="preconnect" href="https://api.mapbox.com"></link>
         <meta
           name="description"
-          content="CIVIL MOVEMENT 2020 (ELECT) MAP, by Palminister"
+          content="Civil Movement 2020 (ELECT) Map, by Palminister"
         ></meta>
       </Head>
       <h1 className="absolute z-10 m-3 mt-8 ml-8 font-mono font-bold tracking-wider bg-white bg-opacity-80 text-md md:text-lg">
@@ -69,7 +74,9 @@ export const Home = () => {
         }}
         className={byClass}
       >
-        <span className="text-xl">🧑‍🦰</span>
+        <div className="flex justify-center">
+          <Emoji name="person-red-hair" width={20} className="self-center" />
+        </div>
       </button>
       <Explain></Explain>
       <Modal emojiSelect={emojiSelect} setEmojiSelect={setEmojiSelect}></Modal>

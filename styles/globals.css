@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://cdn.lazywasabi.net/fonts/NotoSansThai/NotoSansThai.css');
+@import url('http://fonts.cdnfonts.com/css/nimbus-roman-no9l');
 @import 'mapbox-gl/dist/mapbox-gl.css';
 
 html,
@@ -10,7 +11,7 @@ body {
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: 'Noto Sans Thai', sans-serif;
+  font-family: 'Noto Sans Thai', 'Nimbus Roman No9 L', sans-serif;
 }
 
 a {

@@ -1,31 +1,45 @@
+import Emoji from 'react-apple-emojis'
+
 const returnType = (event) => {
   switch (event.type) {
     case 'a':
-      return <span>🍊</span>
+      return <Emoji name="tangerine" width={25} className="self-start" />
     case 'b':
-      return <span>🦋</span>
+      return <Emoji name="butterfly" width={25} className="self-start" />
     case 'c':
-      return <span>🌟</span>
+      return <Emoji name="glowing-star" width={25} className="self-start" />
     case 'd':
-      return <span>🐥</span>
+      return (
+        <Emoji
+          name="front-facing-baby-chick"
+          width={25}
+          className="self-start"
+        />
+      )
     case 'e':
-      return <span>💪</span>
+      return <Emoji name="flexed-biceps" width={25} className="self-start" />
     case 'f':
-      return <span>🔥</span>
+      return <Emoji name="fire" width={25} className="self-start" />
     case 'g':
-      return <span>🩸</span>
+      return <Emoji name="drop-of-blood" width={25} className="self-start" />
     case 'h':
-      return <span>✏️</span>
+      return <Emoji name="pencil" width={25} className="self-start" />
     case 'i':
-      return <span>🌴</span>
+      return <Emoji name="palm-tree" width={25} className="self-start" />
     case 'j':
-      return <span>✍️</span>
+      return <Emoji name="writing-hand" width={25} className="self-start" />
     case 'k':
-      return <span>👩</span>
+      return <Emoji name="woman" width={25} className="self-start" />
     case 'l':
-      return <span>🌎</span>
+      return (
+        <Emoji
+          name="globe-showing-asia-australia"
+          width={25}
+          className="self-start"
+        />
+      )
     default:
-      return <span>🚀</span>
+      return <Emoji name="rocket" width={25} className="self-start" />
   }
 }
 export default returnType

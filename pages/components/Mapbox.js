@@ -2,6 +2,7 @@ import ReactMapGL, { Marker } from 'react-map-gl'
 import * as civilData from '../data/civil_data_filtered.json'
 import React, { useState, useEffect } from 'react'
 import returnType from './returnType'
+import Emoji from 'react-apple-emojis'
 
 const Mapbox = ({
   viewport,
@@ -14,11 +15,11 @@ const Mapbox = ({
   const byType = (event) => {
     switch (event.by) {
       case 1:
-        return '🧑‍🎤'
+        return <Emoji name="singer" width={25} className="self-start" />
       case 2:
-        return '🦸'
+        return <Emoji name="superhero" width={25} className="self-start" />
       case 3:
-        return '🧑‍💼'
+        return <Emoji name="office-worker" width={25} className="self-start" />
       default:
         return ''
     }
